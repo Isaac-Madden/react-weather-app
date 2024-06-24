@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.App {
+    background-image: url(./Assets/sunny-background.png);
+    background-size: cover;
+    background-position: bottom;
+    transition: 0.4 ease-out;
+    min-height: 100vh;
+    padding: 5%;
+}
+
+.App.rain {
+    background-image: url(./Assets/rain-background.png );
+}
+
+.SearchBox {
+    width: 100%;
+    padding: 3%;
+    border: none;
+    background-color: rgba(225, 225, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.2);
+    color: black;
+    font-size: 1rem;
+    transition: 0.2s ease;
+}
+
+.SearchBox:focus {
+    background-color: rgba(225, 225, 255, 0.9);
+}
+
+.SearchContainer {
+    padding: 3% 0%;
+}
+
+/* .Header {
+    insert some styling
+} */
+
+.TheDate {
+    padding: 3% 0%
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+p {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.WeatherBox {
+    position: relative;
+    display: block;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px 25px;
+    text-align: center;
+    align-items: center;
+}
