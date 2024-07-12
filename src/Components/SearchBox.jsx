@@ -1,20 +1,24 @@
 import React, { useState } from "react";
-
-const api = {
-    key: "not telling",
-    base: "https://api.openweathermap.org/data/3.0/"
-}
+import axios from "axios";
 
 const SearchBox = () => {
 
-    const [query, setQuery] = useState("")
-    const [weather, setWeather] = useState({})
+    const [city, setCity] = useState("")
+    const [currentWeather, setCurrentWeather] = useState({})
+    const [currentLocation, setCurrentLocation] = useState({})
 
-    const search = e => {
-        if (e.key === "Enter"){
-            fetch(`${api.base}onecall?lat=33.44&lon=-94.04&appid=${api.key}`)
-            .then(result => console.log(result))
-        }
+    const apiBase = "http://api.weatherapi.com/v1/current.json?"
+
+    const search = () => {
+        return axios.get(`${apiBase}key=${process.env.REACT_APP_API_KEY}&q=${city}&days=3&aqi=no&alerts=no`)
+        .then(response => { 
+            setCurrentWeather(response.data.current)
+            setCurrentLocation(response.data.location)
+        })
+        .then( () => {
+            console.log("the weather:", currentWeather)
+            console.log("the location", currentLocation)
+        })
     }
 
     return (
@@ -22,11 +26,11 @@ const SearchBox = () => {
         <input 
             type="text" 
             className="SearchBox" 
-            placeholder="Search..."
-            onChange={e => setQuery(e.target.value)}
-            value={query}
-            onKeyPress={search}
+            placeholder="Enter a city..."
+            onChange={event => { setCity(event.target.value) }}
+            value={city}
         />
+        <button className="searchButton" onClick={ ()=>search() }> Search </button>
         </div>
     )
     }
