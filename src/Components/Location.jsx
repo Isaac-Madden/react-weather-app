@@ -1,10 +1,9 @@
 import React from "react";
 
-const Location = () => {
+const Location = ({currentLocation}) => {
 
-    return (
-            <p className="Location">This is the location...</p>
-    )
+        return (   <p> Heres the location details </p>  )
+
 }
 
 export default Location

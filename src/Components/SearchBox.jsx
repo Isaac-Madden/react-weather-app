@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Weather from "./Weather"
+import Location from "./Location";
 
 const SearchBox = () => {
 
     const [city, setCity] = useState("")
-    const [currentWeather, setCurrentWeather] = useState({})
-    const [currentLocation, setCurrentLocation] = useState({})
+    const [currentWeather, setCurrentWeather] = useState("")
+    const [currentLocation, setCurrentLocation] = useState("")
 
     const apiBase = "http://api.weatherapi.com/v1/current.json?"
 
@@ -15,13 +17,10 @@ const SearchBox = () => {
             setCurrentWeather(response.data.current)
             setCurrentLocation(response.data.location)
         })
-        .then( () => {
-            console.log("the weather:", currentWeather)
-            console.log("the location", currentLocation)
-        })
     }
 
     return (
+        <>
         <div className="SearchContainer">
         <input 
             type="text" 
@@ -32,6 +31,9 @@ const SearchBox = () => {
         />
         <button className="searchButton" onClick={ ()=>search() }> Search </button>
         </div>
+        <Weather currentWeather={currentWeather} />
+        <Location currentLocation={currentLocation} />
+        </>
     )
     }
 
