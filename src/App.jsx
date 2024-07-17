@@ -1,20 +1,13 @@
-import Header from "./Components/Header"
-import SearchBox from "./Components/SearchBox"
-import TheDate from "./Components/TheDate"
-import Location from "./Components/Location"
-
-// import 'dotenv/config'
-// console.log(process.env) 
+import Header from "./Components/AppComponents/Header"
+import SearchBox from "./Components/AppComponents/SearchBox"
+import TheDate from "./Components/AppComponents/TheDate"
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Header />
+      <TheDate />
       <SearchBox />
-      <TheDate/>
-      <Location />
-      <div className="WeatherBox">
-      </div>
     </div>
   )
 }

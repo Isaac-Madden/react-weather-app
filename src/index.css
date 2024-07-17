@@ -51,12 +51,35 @@
     padding: 3% 0%;
 }
 
-/* .Header {
-    insert some styling
-} */
-
 .TheDate {
     padding: 3% 0%
+}
+
+.SearchResults {
+    text-align: center;
+}
+
+.WeatherResults {
+    background-color: rgb(238, 62, 205);
+    /* display: inline-block; */
+    padding: 0% 3%;
+}
+
+.ForecastResults {
+    background-color: rgb(81, 241, 105);
+    /* display: inline-block; */
+    padding: 0% 3%;
+}
+
+.LocationResults {
+    background-color: rgb(31, 238, 225);
+    /* display: inline-block; */
+    padding: 0% 3%;
+}
+
+.ForecastCard {
+    display: inline-block;
+    padding: 0% 3%;
 }
 
 h1 {
@@ -71,15 +94,4 @@ p {
     font-size: 1.5rem;
     font-weight: 800;
     text-align: center;
-}
-
-.WeatherBox {
-    position: relative;
-    display: block;
-    margin: 30px auto;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    padding: 15px 25px;
-    text-align: center;
-    align-items: center;
 }

@@ -16,12 +16,11 @@ const Weather = ({currentWeather}) => {
         let weatherKeys = Object.keys(displayWeather)
 
         return (
-            <>
+            <div className="WeatherResults">
                 {
                 weatherKeys.map(  (item) => <p key={displayWeather[item]}> {displayWeather[item]}</p>  )
                 }
-            </>
-    
+            </div>
         )
     }
 }
