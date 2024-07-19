@@ -3,14 +3,10 @@ import ForecastCard from "./ForecastCard";
 
 const Forecast = ({currentForecast}) => {
 
-    if (currentForecast === ""){
-        return (  <p> Please enter a city! </p>  )
-    }
-
-    else {
+    if (currentForecast !== ""){
         return (
             <div className="ForecastResults">
-                {currentForecast.map( day => <ForecastCard day={day} />  )}
+                {currentForecast.map( day => <ForecastCard day={day} key={day.date} />  )}
             </div>
         )
     }

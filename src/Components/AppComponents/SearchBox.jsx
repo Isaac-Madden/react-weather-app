@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Weather from "../SearchBoxComponents/Weather"
-import Location from "../SearchBoxComponents/Location";
 import Forecast from "../SearchBoxComponents/Forecast";
 
 const SearchBox = () => {
@@ -22,25 +21,49 @@ const SearchBox = () => {
         })
     }
 
-    return (
-        <>
-        <div className="SearchContainer">
-            <input 
-                type="text" 
-                className="SearchBox" 
-                placeholder="Enter a city..."
-                onChange={event => { setCity(event.target.value) }}
-                value={city}
-            />
-            <button className="searchButton" onClick={ ()=>search() }> Search </button>
-        </div>
-        <div className="SearchResults">
-            <Weather currentWeather={weather} />
-            <Location currentLocation={location} />
-            <Forecast currentForecast={forecast} />
-        </div>
-        </>
-    )
+    if (location === ""){
+        return (
+            <>
+            <div className="SearchContainer">
+                <input 
+                    type="text" 
+                    className="SearchBox" 
+                    placeholder="Enter a city..."
+                    onChange={event => { setCity(event.target.value) }}
+                    value={city}
+                />
+                <button className="searchButton" onClick={ ()=>search() }> Search </button>
+            </div>
+            <div className="SearchResults">
+                <Weather currentWeather={weather} />
+                <Forecast currentForecast={forecast} />
+            </div>
+            </>
+        )
+    }
+    else {
+        return (
+            <>
+            <h3>Heres the forcast for {location.name}, {location.country}!</h3>
+            <div className="SearchResults">
+                <Weather currentWeather={weather} />
+                <Forecast currentForecast={forecast} />
+            </div>
+            <div className="SearchContainer">
+                <input 
+                    type="text" 
+                    className="SearchBox" 
+                    placeholder="Search somewhere else?"
+                    onChange={event => { setCity(event.target.value) }}
+                    value={city}
+                />
+                <button className="searchButton" onClick={ ()=>search() }> Search </button>
+            </div>
+            </>
+        )
+    }
+
+
     }
 
 export default SearchBox

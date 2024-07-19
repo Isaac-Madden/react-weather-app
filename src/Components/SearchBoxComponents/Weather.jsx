@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Weather = ({currentWeather}) => {
 
-    if (currentWeather === ""){
-        return (  <p> Please enter a city! </p>  )
-    }
-    else {
+    if (currentWeather !== ""){
 
         let displayWeather = {
             temp_c: currentWeather.temp_c + " degrees",
@@ -14,15 +11,18 @@ const Weather = ({currentWeather}) => {
         }
 
         let weatherKeys = Object.keys(displayWeather)
+        let icon = "https:"+currentWeather.condition.icon
 
         return (
             <div className="WeatherResults">
                 {
                 weatherKeys.map(  (item) => <p key={displayWeather[item]}> {displayWeather[item]}</p>  )
                 }
+                <img src={icon}></img>
             </div>
         )
     }
+
 }
 
 export default Weather
