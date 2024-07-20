@@ -5,9 +5,7 @@ const Forecast = ({currentForecast}) => {
 
     if (currentForecast !== ""){
         return (
-            <div className="ForecastResults">
-                {currentForecast.map( day => <ForecastCard day={day} key={day.date} />  )}
-            </div>
+            <> {currentForecast.map( day => <ForecastCard day={day} key={day.date} />  )} </>
         )
     }
 }

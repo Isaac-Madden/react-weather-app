@@ -21,41 +21,26 @@ const SearchBox = () => {
         })
     }
 
-    if (location === ""){
         return (
             <>
+            {location !== "" ? <h3>Heres the forcast for {location.name}, {location.country}!</h3> : null }
+
+            <div className="SearchResults">
+                <Weather currentWeather={weather} />
+                <Forecast currentForecast={forecast} />
+            </div>
+
+            {location !== "" ? <h3>Check the weather somewhere else?</h3> : null }
+
             <div className="SearchContainer">
                 <form  onSubmit={ (event)=> {event.preventDefault(); search()  }}>
-                    <input className="SearchBox" required value={city} placeholder="Enter a city!" onChange={ event => { setCity(event.target.value)} }/>
+                    <input className="SearchBox" placeholder="Type a City..." required value={city} onChange={ event => { setCity(event.target.value)} }/>
                     <button className="searchButton" type="submit" >Search</button>
                 </form>
             </div>
-
-            <div className="SearchResults">
-                <Weather currentWeather={weather} />
-                <Forecast currentForecast={forecast} />
-            </div>
             </>
         )
-    }
-    else {
-        return (
-            <>
-            <h3>Heres the forcast for {location.name}, {location.country}!</h3>
-            <div className="SearchResults">
-                <Weather currentWeather={weather} />
-                <Forecast currentForecast={forecast} />
-            </div>
-
-            <div className="SearchContainer">
-                <form  onSubmit={ (event)=> {event.preventDefault(); search()  }}>
-                    <input className="SearchBox" required value={city} onChange={ event => { setCity(event.target.value)} }/>
-                    <button className="searchButton" type="submit" placeholder="Search somewhere else?">Search</button>
-                </form>
-            </div>
-            </>
-        )
-    }
+    // }
 
 
     }

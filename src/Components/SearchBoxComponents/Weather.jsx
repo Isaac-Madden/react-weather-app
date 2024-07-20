@@ -14,12 +14,12 @@ const Weather = ({currentWeather}) => {
         let icon = "https:"+currentWeather.condition.icon
 
         return (
-            <div className="WeatherResults">
+            <ul className="ForecastCard">
                 {
-                weatherKeys.map(  (item) => <p key={displayWeather[item]}> {displayWeather[item]}</p>  )
+                weatherKeys.map(  (item) => <li key={displayWeather[item]}> {displayWeather[item]}</li>  )
                 }
                 <img src={icon}></img>
-            </div>
+            </ul>
         )
     }
 
