@@ -5,7 +5,9 @@ let currentDate = new Date().toLocaleDateString('en-gb', { weekday:"long", year:
 const TheDate = () => {
 
     return (
-            <p className="TheDate">{currentDate}</p>
+        <div className="TheDate">
+        <h3>{currentDate}</h3> 
+        </div>
     )
 }
 

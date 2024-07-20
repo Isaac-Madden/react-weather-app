@@ -5,8 +5,8 @@ import TheDate from "./Components/AppComponents/TheDate"
 function App() {
   return (
     <div className="App">
-      <Header />
       <TheDate />
+      <Header />
       <SearchBox />
     </div>
   )

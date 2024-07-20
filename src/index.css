@@ -52,7 +52,16 @@
 }
 
 .TheDate {
-    padding: 3% 0%
+    padding: 0% 3% 3% 3%;
+    display: block;
+    z-index: 100;
+    text-align: right;
+}
+
+.TheHeader {
+    display: block;
+    text-align: center;
+    padding: 3%;
 }
 
 .SearchResults {
@@ -85,8 +94,12 @@
 h1 {
     text-align: center;
     color: #fff;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 800;
+}
+
+h3 {
+    color: #fff;
 }
 
 p {

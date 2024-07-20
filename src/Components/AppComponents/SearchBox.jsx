@@ -25,15 +25,12 @@ const SearchBox = () => {
         return (
             <>
             <div className="SearchContainer">
-                <input 
-                    type="text" 
-                    className="SearchBox" 
-                    placeholder="Enter a city..."
-                    onChange={event => { setCity(event.target.value) }}
-                    value={city}
-                />
-                <button className="searchButton" onClick={ ()=>search() }> Search </button>
+                <form  onSubmit={ (event)=> {event.preventDefault(); search()  }}>
+                    <input className="SearchBox" required value={city} placeholder="Enter a city!" onChange={ event => { setCity(event.target.value)} }/>
+                    <button className="searchButton" type="submit" >Search</button>
+                </form>
             </div>
+
             <div className="SearchResults">
                 <Weather currentWeather={weather} />
                 <Forecast currentForecast={forecast} />
@@ -49,15 +46,12 @@ const SearchBox = () => {
                 <Weather currentWeather={weather} />
                 <Forecast currentForecast={forecast} />
             </div>
+
             <div className="SearchContainer">
-                <input 
-                    type="text" 
-                    className="SearchBox" 
-                    placeholder="Search somewhere else?"
-                    onChange={event => { setCity(event.target.value) }}
-                    value={city}
-                />
-                <button className="searchButton" onClick={ ()=>search() }> Search </button>
+                <form  onSubmit={ (event)=> {event.preventDefault(); search()  }}>
+                    <input className="SearchBox" required value={city} onChange={ event => { setCity(event.target.value)} }/>
+                    <button className="searchButton" type="submit" placeholder="Search somewhere else?">Search</button>
+                </form>
             </div>
             </>
         )
