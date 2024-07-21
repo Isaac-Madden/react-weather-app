@@ -24,14 +24,14 @@ const SearchBox = () => {
 
         return (
             <>
-            {location !== "" ? <h3>Heres the forcast for {location.name}, {location.country}!</h3> : null }
+            {location !== "" ? <h2>Here's the forcast for {location.name}, {location.country}!</h2> : null }
 
             <div className="SearchResults">
                 <Weather currentWeather={weather} />
                 <Forecast currentForecast={forecast} />
             </div>
 
-            {location !== "" ? <h3>Check the weather somewhere else?</h3> : null }
+            {location !== "" ? <h2>Check the weather somewhere else?</h2> : null }
 
             <div className="SearchContainer">
                 <form  onSubmit={ (event)=> {event.preventDefault(); search()  }}>

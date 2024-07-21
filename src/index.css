@@ -59,13 +59,6 @@ li {
     padding: 3% 0%;
 }
 
-.TheDate {
-    padding: 0% 3% 3% 3%;
-    display: block;
-    z-index: 100;
-    text-align: right;
-}
-
 .TheHeader {
     display: block;
     text-align: center;
@@ -116,7 +109,7 @@ h1 {
     font-weight: 800;
 }
 
-h3 {
+h2 {
     color: #fff;
     text-align: center;
 }
@@ -127,3 +120,13 @@ p {
     font-weight: 800;
     text-align: center;
 }
+
+.skip-to-main-content-link {
+    padding: 1%;
+    background-color: white;
+    color: black;
+    opacity: 0;
+  }
+  .skip-to-main-content-link:focus {
+    opacity: 1;
+  }

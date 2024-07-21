@@ -19,7 +19,7 @@ const Weather = ({currentWeather}) => {
                 {
                 weatherKeys.map(  (item) => <li key={displayWeather[item]}> {displayWeather[item]}</li>  )
                 }
-                <img src={icon}></img>
+                <img src={icon} alt="an icon for weather conditions based on description"></img>
             </ul>
         )
     }

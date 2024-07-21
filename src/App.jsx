@@ -5,9 +5,12 @@ import TheDate from "./Components/AppComponents/TheDate"
 function App() {
   return (
     <div className="App">
-      <TheDate />
+      <a href="#main" class="skip-to-main-content-link">Skip to main content</a>
       <Header />
-      <SearchBox />
+      <TheDate />
+      <main id="main">
+        <SearchBox />
+      </main>
     </div>
   )
 }
