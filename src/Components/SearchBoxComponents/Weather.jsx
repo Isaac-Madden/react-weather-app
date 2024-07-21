@@ -15,6 +15,7 @@ const Weather = ({currentWeather}) => {
 
         return (
             <ul className="ForecastCard">
+                <li>Right now</li>
                 {
                 weatherKeys.map(  (item) => <li key={displayWeather[item]}> {displayWeather[item]}</li>  )
                 }

@@ -19,6 +19,7 @@ const SearchBox = () => {
             setWeather(response.data.current)
             setLocation(response.data.location)
         })
+        .then( () => setCity(""))
     }
 
         return (

@@ -5,6 +5,10 @@
     font-family: sans-serif;
 }
 
+li {
+    list-style-type: none;
+}
+
 .App {
     background-image: url(./Assets/sunny-background.png);
     background-size: cover;
@@ -35,7 +39,7 @@
 }
 
 .searchButton {
-    width: 15%;
+    width: 17%;
     margin-left: 2%;
     padding: 2%;
     border: none;
@@ -76,9 +80,33 @@
 
 .ForecastCard {
     text-align: center;
-    padding: 3%;
-    border: 1px black solid;
-    list-style-type: none;
+    padding: 6% 5% 0% 5%;
+    background-color: whitesmoke;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 3%;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .SearchResults {
+        grid-template-columns: auto auto;
+    }
+
+    .ForecastCard {
+        padding: 6% 0%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .SearchResults {
+        grid-template-columns: auto;
+    }
+
+    .ForecastCard {
+        padding: 6% 0%;
+    }
 }
 
 h1 {
@@ -90,6 +118,7 @@ h1 {
 
 h3 {
     color: #fff;
+    text-align: center;
 }
 
 p {
