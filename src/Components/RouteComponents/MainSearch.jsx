@@ -1,25 +1,33 @@
-import React, { useState } from "react";
-import axios from "axios";
-import Weather from "../SearchBoxComponents/Weather"
-import Forecast from "../SearchBoxComponents/Forecast";
+import React, { useContext, useState } from "react";
+import Weather from "../MainSearchComponents/Weather"
+import Forecast from "../MainSearchComponents/Forecast";
+import { homeSearch } from "../../API";
 
-const SearchBox = () => {
+import {Background} from "../../Contexts/BackgroundHandle.jsx";
+
+const MainSearch = () => {
 
     const [city, setCity] = useState("")
     const [weather, setWeather] = useState("")
     const [location, setLocation] = useState("")
     const [forecast, setForecast] = useState("")
 
-    const apiBase = "http://api.weatherapi.com/v1/forecast.json?"
+    const backgroundContext = useContext(Background);
+    const setBackgroundContext = backgroundContext.setCurrentBackground
 
+    // console.log(backgroundContext.currentBackground)
+ 
     const search = () => {
-        return axios.get(`${apiBase}key=${process.env.REACT_APP_API_KEY}&q=${city}&days=3`)
-        .then(response => { 
-            setForecast(response.data.forecast.forecastday)
-            setWeather(response.data.current)
-            setLocation(response.data.location)
-        })
-        .then( () => setCity(""))
+
+        homeSearch(city)
+            .then( response => { 
+                setForecast(response.data.forecast.forecastday)
+                setWeather(response.data.current)
+                setLocation(response.data.location)
+                setBackgroundContext(response.data.current.condition.text)
+            })
+            .then( () => setCity("") )
+            .catch( (error) => console.log(error))
     }
 
         return (
@@ -41,9 +49,6 @@ const SearchBox = () => {
             </div>
             </>
         )
-    // }
-
-
     }
 
-export default SearchBox
+export default MainSearch

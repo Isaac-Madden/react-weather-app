@@ -10,7 +10,6 @@ li {
 }
 
 .App {
-    background-image: url(./Assets/sunny-background.png);
     background-size: cover;
     background-position: bottom;
     transition: 0.4 ease-out;
@@ -18,8 +17,16 @@ li {
     padding: 5%;
 }
 
+.App.Sunny {
+    background-image: url(./Assets/sunny.png);
+}
+
 .App.rain {
-    background-image: url(./Assets/rain-background.png );
+    background-image: url(./Assets/rain.svg );
+}
+
+.App.thunder {
+    background-image: url(./Assets/thunder.jpg );
 }
 
 .SearchBox {
@@ -129,4 +136,29 @@ p {
   }
   .skip-to-main-content-link:focus {
     opacity: 1;
+  }
+
+  .nav {
+    border: none;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .nav li {
+    padding: 2%;
+  }
+
+  .nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .nav li:hover {
+    background-color: rgb(255, 242, 0);
   }
